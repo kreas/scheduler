@@ -1,5 +1,12 @@
 # scheduler
 
+## Prerequisites
+
+- [Yarn](https://yarnpkg.com/)
+- [Vue CLI](https://cli.vuejs.org/)
+- [Hasura CLI](https://hasura.io/docs/1.0/graphql/manual/hasura-cli/index.html)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
 ## Project setup
 ```
 yarn install
@@ -7,7 +14,12 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn serve
+yarn dev
+```
+
+### Starts the Hasura Console
+```
+yarn console
 ```
 
 ### Compiles and minifies for production

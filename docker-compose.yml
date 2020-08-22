@@ -4,6 +4,7 @@ services:
     image: postgres:12
     volumes:
     - db_data:/var/lib/postgresql/data
+    restart: unless-stopped
     environment:
       POSTGRES_PASSWORD: password
 
@@ -13,9 +14,10 @@ services:
     - 8080:8080
     depends_on:
     - postgres
+    restart: unless-stopped
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:password@postgres:5432/postgres
-      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "false"
       HASURA_GRAPHQL_DEV_MODE: "true"
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey

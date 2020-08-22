@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "docker-compose up -d && vue-cli-service serve",
+    "console": "cd hasura && hasura console",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
