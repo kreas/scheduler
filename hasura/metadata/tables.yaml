@@ -1,0 +1,24 @@
+- table:
+    schema: public
+    name: calendars
+  object_relationships:
+  - name: user
+    using:
+      manual_configuration:
+        remote_table:
+          schema: public
+          name: users
+        column_mapping:
+          user_id: id
+- table:
+    schema: public
+    name: users
+  array_relationships:
+  - name: calendars
+    using:
+      manual_configuration:
+        remote_table:
+          schema: public
+          name: calendars
+        column_mapping:
+          id: user_id
